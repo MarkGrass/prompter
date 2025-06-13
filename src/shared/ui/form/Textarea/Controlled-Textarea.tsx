@@ -15,10 +15,7 @@ export const Textarea: FC<TextareaProps> = ({ name, size, rows, hint, ...props }
         <Controller
             control={control}
             name={name}
-            render={({
-                field: { onChange, onBlur, value, ref },
-                fieldState: { error },
-            }) => {
+            render={({ field: { onChange, onBlur, ref }, fieldState: { error } }) => {
                 const hasError = Boolean(error);
                 const errorMessage = error?.message ?? '';
 
@@ -29,7 +26,6 @@ export const Textarea: FC<TextareaProps> = ({ name, size, rows, hint, ...props }
                         id={name}
                         rows={rows || 3}
                         size={size || 's'}
-                        value={value}
                         textareaProps={{
                             ref: ref,
                             autoComplete: 'do-not-autofill',

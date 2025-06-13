@@ -16,7 +16,7 @@ export const Input: FC<InputProps> = ({ name, size, hint, onChange, ...props }) 
             control={control}
             name={name}
             render={({
-                field: { onChange: onChangeField, onBlur, value, ref },
+                field: { onChange: onChangeField, onBlur, ref },
                 fieldState: { error },
             }) => {
                 const hasError = Boolean(error);
@@ -28,7 +28,6 @@ export const Input: FC<InputProps> = ({ name, size, hint, onChange, ...props }) 
                         hint={hasError ? errorMessage : hint}
                         id={name}
                         size={size || 's'}
-                        value={value}
                         inputProps={{
                             autoComplete: 'do-not-autofill',
                             required: false,
