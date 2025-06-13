@@ -8,13 +8,7 @@ export type InputProps = BaseInputProps & {
     name: string;
 };
 
-export const Input: FC<InputProps> = ({
-    name,
-    size,
-    hint,
-    onChange,
-    ...props
-}) => {
+export const Input: FC<InputProps> = ({ name, size, hint, onChange, ...props }) => {
     const { control } = useFormContext();
 
     return (

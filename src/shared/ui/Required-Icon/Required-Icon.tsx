@@ -5,6 +5,5 @@ import { TextStarIcon } from '@ozen-ui/icons';
 
 export type RequiredIconProps = IconProps;
 export const RequiredIcon: FC<RequiredIconProps> = (props) => {
-
     return <TextStarIcon size="s" {...props} />;
 };

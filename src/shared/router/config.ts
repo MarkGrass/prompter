@@ -3,4 +3,4 @@ export const ROUTES = {
     DIALOGS: '/',
     LOGIN: '/login',
     UNKNOWN: '*',
-}
+};

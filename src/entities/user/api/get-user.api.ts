@@ -6,4 +6,4 @@ export const getUserApi = async () => {
     });
 
     return response.data;
-}
+};

@@ -1,4 +1,4 @@
-import type { FC} from 'react';
+import type { FC } from 'react';
 import { useEffect } from 'react';
 
 import { useTimer } from '@ozen-ui/kit/useTimer';

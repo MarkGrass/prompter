@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    TableContainerProps as OzenContainerProps} from '@ozen-ui/kit/Table';
-import {
-    TableContainer as OzenTableContainer,
-} from '@ozen-ui/kit/Table';
+import type { TableContainerProps as OzenContainerProps } from '@ozen-ui/kit/Table';
+import { TableContainer as OzenTableContainer } from '@ozen-ui/kit/Table';
 
 type TableContainerProps = OzenContainerProps;
 

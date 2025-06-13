@@ -26,11 +26,11 @@ sample({
 
 export const useLoginErrorHandler = (cb: () => void) => {
     useEventSubscription(loginFx.fail, cb);
-}
+};
 
 export const useLoginSuccessHandler = (cb: () => void) => {
     useEventSubscription(loginFx.doneData, cb);
-}
+};
 
 export const loginSelectors = {
     useLoginLoading: () => useUnit(loginFx.pending),

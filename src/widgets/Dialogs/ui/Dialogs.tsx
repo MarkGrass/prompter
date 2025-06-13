@@ -6,6 +6,6 @@ import { userGate } from 'entities/user';
 
 export const Dialogs: FC = () => {
     useGate(userGate);
-    
-    return  <div></div>
-}
+
+    return <div></div>;
+};

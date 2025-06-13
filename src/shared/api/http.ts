@@ -27,7 +27,7 @@ client.interceptors.response.use(
         }
 
         return Promise.reject(error);
-    }
+    },
 );
 
 export const setLogoutInterceptor = (callback: () => void) => {
@@ -37,7 +37,6 @@ export const setLogoutInterceptor = (callback: () => void) => {
 export const setAuthToken = (token: string): void => {
     client.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
-
 
 export const getFromApi = <T = void>(
     config: AxiosRequestConfig,
