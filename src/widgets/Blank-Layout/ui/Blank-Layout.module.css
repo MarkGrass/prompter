@@ -1,0 +1,7 @@
+.wrapper {
+    --paper-background-color: #fff;
+    margin: var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

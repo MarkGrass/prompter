@@ -1,0 +1,206 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    font: inherit;
+    vertical-align: baseline;
+}
+
+:root {
+    interpolate-size: allow-keywords;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    height: auto;
+    max-width: 100%;
+
+    font-style: italic;
+    vertical-align: middle;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* TYPOGRAPHY ================================= */
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+
+    text-indent: 0;
+}
+
+small {
+    font-size: 0.7em;
+}
+
+strong {
+    font-weight: 600;
+}
+
+em {
+    font-style: italic;
+}
+
+del {
+    opacity: 0.5;
+}
+
+q {
+    font-style: italic;
+}
+
+sup {
+    font-size: 0.7em;
+    line-height: 0;
+    vertical-align: super;
+
+    position: relative;
+    top: -0.075em;
+}
+
+sub {
+    font-size: 0.7em;
+    line-height: 0;
+    vertical-align: sub;
+
+    position: relative;
+    bottom: -0.075em;
+}
+
+blockquote {
+    padding-left: 1em;
+
+    font-style: italic;
+
+    quotes: auto;
+}
+
+blockquote p {
+    font-style: oblique;
+    text-indent: 0;
+}
+
+ul {
+    margin-left: 0;
+
+    list-style: disc;
+}
+
+ul li,
+ol li {
+    margin: 0;
+}
+
+ol {
+    list-style-type: none;
+    counter-reset: list;
+}
+
+ol > li {
+    counter-increment: list;
+}
+
+.alpha-list > li {
+    list-style-type: none;
+    counter-increment: letters;
+}
+
+.dash-list > li {
+    counter-increment: list;
+}
+
+ol > li:before {
+    content: counters(list, '.', decimal) '. ';
+}
+
+.alpha-list > li:before {
+    content: counters(letters, '.', lower-alpha) '. ';
+}
+
+ol li > *:first-child {
+    margin: 0;
+
+    display: inline;
+}
+
+ul ul {
+    list-style: circle;
+}
+
+ul ul ul {
+    list-style: square;
+}
+
+.dash-list {
+    list-style: '- ';
+}
+
+address {
+    margin: 0.5em 0;
+}
+
+address p {
+    margin: 0;
+
+    font-style: oblique;
+    text-indent: 0;
+}
+
+#root {
+    min-height: 100vh;
+    display: grid;
+    background-color: #ebecf0;
+}

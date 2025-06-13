@@ -1,0 +1,13 @@
+{
+    "printWidth": 90,
+    "tabWidth": 4,
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "htmlWhitespaceSensitivity": "css"
+}
+
