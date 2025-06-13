@@ -54,7 +54,7 @@ jobs:
 
             - name: Docker build
               run: |
-                  docker build  -f build/Dockerfile -t ghcr.io/$OWNER/${{ needs.define.outputs.image }}:latest .
+                  docker build  -f Dockerfile -t ghcr.io/$OWNER/${{ needs.define.outputs.image }}:latest .
 
             - name: Docker push
               run: |
