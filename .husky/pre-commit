@@ -1,0 +1,2 @@
+pnpm dlx pnpm lint:staged
+git add .

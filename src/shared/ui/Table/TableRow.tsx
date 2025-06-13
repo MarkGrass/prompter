@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    TableRowProps as OzenRowProps} from '@ozen-ui/kit/Table';
-import {
-    TableRow as OzenTableRow,
-} from '@ozen-ui/kit/Table';
+import type { TableRowProps as OzenRowProps } from '@ozen-ui/kit/Table';
+import { TableRow as OzenTableRow } from '@ozen-ui/kit/Table';
 
 type TableRowProps = OzenRowProps;
 

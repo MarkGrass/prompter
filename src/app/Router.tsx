@@ -7,7 +7,6 @@ import { Loader, Stack } from 'shared/ui';
 import { AppLayout } from 'widgets/App-Layout';
 import { BlankLayout } from 'widgets/Blank-Layout';
 
-
 const NoMatchPage = lazy(() => import('pages/No-Match-Page'));
 const LoginPage = lazy(() => import('pages/Login-Page'));
 const DialogsPage = lazy(() => import('pages/Dialogs-Page'));

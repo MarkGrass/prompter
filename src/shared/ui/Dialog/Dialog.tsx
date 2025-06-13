@@ -6,7 +6,8 @@ import type {
     DialogTitleProps,
     DialogSubtitleProps,
     DialogBodyProps,
-    DialogFooterProps} from '@ozen-ui/kit/Dialog';
+    DialogFooterProps,
+} from '@ozen-ui/kit/Dialog';
 import {
     Dialog as OzenDialog,
     DialogHeader,

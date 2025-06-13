@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    TypographyProps as OzenTypographyProps} from '@ozen-ui/kit/Typography';
-import {
-    Typography as OzenTypography
-} from '@ozen-ui/kit/Typography';
+import type { TypographyProps as OzenTypographyProps } from '@ozen-ui/kit/Typography';
+import { Typography as OzenTypography } from '@ozen-ui/kit/Typography';
 
 export type TypographyProps = OzenTypographyProps;
 

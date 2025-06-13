@@ -1,8 +1,5 @@
-import type {
-    SnackbarPushMessageCallback} from '@ozen-ui/kit/Snackbar';
-import {
-    useSnackbar as useOzonSnackbar
-} from '@ozen-ui/kit/Snackbar';
+import type { SnackbarPushMessageCallback } from '@ozen-ui/kit/Snackbar';
+import { useSnackbar as useOzonSnackbar } from '@ozen-ui/kit/Snackbar';
 
 export const useSnackbar = () => {
     const { pushMessage, closeMessage } = useOzonSnackbar();

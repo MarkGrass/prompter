@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    ContainerProps as OzenContainerProps} from '@ozen-ui/kit/Container';
-import {
-    Container as OzenContainer
-} from '@ozen-ui/kit/Container';
+import type { ContainerProps as OzenContainerProps } from '@ozen-ui/kit/Container';
+import { Container as OzenContainer } from '@ozen-ui/kit/Container';
 
 type ContainerProps = OzenContainerProps;
 

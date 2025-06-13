@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    TableCellProps as OzenCellProps} from '@ozen-ui/kit/Table';
-import {
-    TableCell as OzenTableCell,
-} from '@ozen-ui/kit/Table';
+import type { TableCellProps as OzenCellProps } from '@ozen-ui/kit/Table';
+import { TableCell as OzenTableCell } from '@ozen-ui/kit/Table';
 
 type TableCellProps = OzenCellProps;
 

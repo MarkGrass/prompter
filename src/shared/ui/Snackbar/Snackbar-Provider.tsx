@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    SnackbarProviderProps as OzenSnackbarProviderProps} from '@ozen-ui/kit/Snackbar';
-import {
-    SnackbarProvider as OzenSnackbarProvider,
-} from '@ozen-ui/kit/Snackbar';
+import type { SnackbarProviderProps as OzenSnackbarProviderProps } from '@ozen-ui/kit/Snackbar';
+import { SnackbarProvider as OzenSnackbarProvider } from '@ozen-ui/kit/Snackbar';
 
 type SnackbarProviderProps = OzenSnackbarProviderProps;
 

@@ -8,13 +8,7 @@ export type TextareaProps = BaseTextareaProps & {
     name: string;
 };
 
-export const Textarea: FC<TextareaProps> = ({
-    name,
-    size,
-    rows,
-    hint,
-    ...props
-}) => {
+export const Textarea: FC<TextareaProps> = ({ name, size, rows, hint, ...props }) => {
     const { control } = useFormContext();
 
     return (

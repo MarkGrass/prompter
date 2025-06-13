@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 
-import type {
-    ListItemProps as OzenListItemProps} from '@ozen-ui/kit/List';
-import {
-    ListItem as OzenListItem
-} from '@ozen-ui/kit/List';
+import type { ListItemProps as OzenListItemProps } from '@ozen-ui/kit/List';
+import { ListItem as OzenListItem } from '@ozen-ui/kit/List';
 
 type ListItemProps = OzenListItemProps;
 
