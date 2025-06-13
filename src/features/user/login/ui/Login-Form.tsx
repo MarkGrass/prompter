@@ -64,18 +64,9 @@ export const LoginForm: FC = () => {
                     gap="xl"
                     justify="center"
                 >
-                    <Input
-                        fullWidth
-                        name="email"
-                        placeholder="Укажите электронную почту"
-                    />
+                    <Input fullWidth name="phone_number" placeholder="Телефон" />
 
-                    <Input
-                        fullWidth
-                        name="password"
-                        placeholder="Укажите пароль"
-                        type="password"
-                    />
+                    <Input fullWidth name="code" placeholder="Код" />
 
                     <Button fullWidth form="login-form" loading={isLoading} type="submit">
                         Вход

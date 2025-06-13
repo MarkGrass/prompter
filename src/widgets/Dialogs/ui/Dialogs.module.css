@@ -1,0 +1,8 @@
+.list {
+}
+.dialog {
+    border: solid var(--color-border-secondary);
+    border-width: 0 1px;
+}
+.bot {
+}
