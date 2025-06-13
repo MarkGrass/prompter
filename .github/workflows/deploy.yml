@@ -11,7 +11,7 @@ jobs:
 
     env:
       IMAGE: prompter
-      IMAGE_TEST: ai_hack_test
+      IMAGE_TEST: prompter
 
     outputs:
       image: ${{ steps.define_env.outputs.image }}
