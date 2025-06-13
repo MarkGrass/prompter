@@ -64,7 +64,7 @@ export const LoginForm: FC = () => {
                     gap="xl"
                     justify="center"
                 >
-                    <Input fullWidth name="phone_number" placeholder="Номер телефона" />
+                    <Input fullWidth name="phone_number" placeholder="Телефон" />
 
                     <Input fullWidth name="code" placeholder="Код" />
 
