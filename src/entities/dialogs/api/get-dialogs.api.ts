@@ -4,7 +4,7 @@ import type { DialogsRequest, DialogsResponse } from '../model/dialogs.types';
 
 export const getDialogsApi = async (params: DialogsRequest) => {
     const response = await getFromApi<DialogsResponse>({
-        url: '/api/v1/dialog',
+        url: '/v1/dialog',
         params,
     });
 
