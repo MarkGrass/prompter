@@ -18,9 +18,12 @@ export type Dialog = {
     dialogs_messages: DialogMessage[];
 };
 
-export type DialogsResponse = {
-    result: Dialog[];
-    limit: 0;
-    offset: 0;
-    page: 0;
+export type DialogsMeta = {
+    Limit: number;
+    Offset: number;
+    Page: number;
+};
+
+export type DialogsResponse = DialogsMeta & {
+    Result: Dialog[];
 };

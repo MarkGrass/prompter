@@ -1,5 +1,5 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
-import { createGate, useUnit } from 'effector-react';
+import { useUnit } from 'effector-react';
 
 import { persist } from 'effector-storage/local';
 
@@ -7,44 +7,43 @@ import { setAuthToken, setLogoutInterceptor, useEventSubscription } from 'shared
 
 import { getUserApi } from '../api/get-user.api';
 
-export const userGate = createGate();
+import type { User } from './user.types';
 
-export const authTokenSet = createEvent<{ jwt: string }>('authTokenSet');
+export const authTokenSet = createEvent<string>();
 export const userLoggedOut = createEvent();
 
 setLogoutInterceptor(userLoggedOut);
-
-const setAuthTokenFx = createEffect('setAuthTokenFx', {
-    handler: (token: string) => {
-        setAuthToken(token);
-    },
-});
 
 const getUserFx = createEffect('getUserFx', {
     handler: getUserApi,
 });
 
-export const $userAuth = createStore<string>('');
-export const $isAuthorized = $userAuth.map((jwt) => Boolean(jwt));
-export const $user = createStore<string>('');
+const setAuthTokenFx = createEffect('setAuthTokenFx', {
+    handler: (token: string) => {
+        setAuthToken(token);
 
-persist({
-    store: $userAuth,
-    key: 'auth_token',
+        getUserFx();
+    },
 });
+
+export const $token = createStore<string>('');
+export const $isAuthorized = $token.map((token) => Boolean(token));
+export const $user = createStore<User | null>(null);
 
 sample({
     clock: authTokenSet,
-    filter: (token) => Boolean(token),
-    fn: (data) => data.jwt,
-    target: [setAuthTokenFx, $userAuth],
+    target: $token,
 });
 
 sample({
-    clock: [userGate.open, $userAuth],
-    source: $userAuth,
-    fn: (_, token) => token,
-    target: getUserFx,
+    clock: $token,
+    filter: (token) => Boolean(token),
+    target: setAuthTokenFx,
+});
+
+persist({
+    store: $token,
+    key: 'auth_token',
 });
 
 $user.on(getUserFx.doneData, (_, data) => data);

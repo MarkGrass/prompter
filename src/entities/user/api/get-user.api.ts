@@ -1,7 +1,9 @@
-import { postToApi } from 'shared/api';
+import { getFromApi } from 'shared/api';
+
+import type { User } from '../model/user.types';
 
 export const getUserApi = async () => {
-    const response = await postToApi({
+    const response = await getFromApi<User>({
         url: '/v1/profile',
     });
 

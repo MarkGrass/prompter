@@ -1,0 +1,19 @@
+.messenger {
+    padding: var(--space-m) var(--space-xl);
+    border: solid var(--color-border-secondary);
+    border-width: 0 1px;
+}
+.messages {
+    flex-grow: 1;
+}
+.message {
+    max-width: 70%;
+}
+
+.client {
+}
+
+.operator {
+    margin-right: 0;
+    margin-left: auto;
+}

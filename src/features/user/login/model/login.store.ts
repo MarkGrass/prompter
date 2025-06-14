@@ -21,6 +21,7 @@ sample({
 
 sample({
     clock: loginFx.doneData,
+    fn: (data) => data.jwt,
     target: authTokenSet,
 });
 

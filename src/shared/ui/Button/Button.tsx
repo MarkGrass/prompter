@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
-import type { ButtonProps as OzenButtonProps } from '@ozen-ui/kit/Button';
-import { Button as OzenButton } from '@ozen-ui/kit/Button';
+import type { ButtonProps as OzenButtonProps } from '@ozen-ui/kit/ButtonNext';
+import { Button as OzenButton } from '@ozen-ui/kit/ButtonNext';
 
 export type ButtonProps = OzenButtonProps;
 

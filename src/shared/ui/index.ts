@@ -20,6 +20,7 @@ export * from './Pagination';
 export * from './Paper';
 export * from './Popover';
 export * from './Required-Icon';
+export * from './Scroller';
 export * from './SectionMessage';
 export * from './Segment';
 export * from './Select';

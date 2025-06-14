@@ -1,8 +1,7 @@
+.container {
+    padding: var(--spacing-s);
+}
+
 .list {
-}
-.dialog {
-    border: solid var(--color-border-secondary);
-    border-width: 0 1px;
-}
-.bot {
+    flex-grow: 1;
 }

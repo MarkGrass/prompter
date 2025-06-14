@@ -2,10 +2,62 @@ import type { FC } from 'react';
 
 import { useGate } from 'effector-react';
 
-import { userGate } from 'entities/user';
+import {
+    DialogsCard,
+    dialogsGate,
+    dialogsSelectors,
+    useDialogsErrorHandler,
+} from 'entities/dialogs';
+import { Profile } from 'entities/user';
+import { DialogsFilter } from 'features/dialogs';
+import { Scroller, Stack, useSnackbar } from 'shared/ui';
 
-export const Dialogs: FC = () => {
-    useGate(userGate);
+import styles from './Dialogs.module.css';
 
-    return <div></div>;
+const { useDialogs } = dialogsSelectors;
+
+type DialogsProps = {
+    activeDialog?: string | null;
+    onSelect?: (id: string) => void;
+};
+
+export const Dialogs: FC<DialogsProps> = ({
+    activeDialog = null,
+    onSelect = () => null,
+}) => {
+    useGate(dialogsGate);
+    const { pushMessage } = useSnackbar();
+    const dialogs = useDialogs();
+
+    useDialogsErrorHandler(() => {
+        pushMessage({
+            status: 'error',
+            title: 'Не удалось загрузить список диалогов',
+        });
+    });
+
+    return (
+        <Stack
+            fullHeight
+            fullWidth
+            className={styles.container}
+            direction="column"
+            gap="l"
+        >
+            <DialogsFilter />
+            <Scroller className={styles.list}>
+                <Stack fullWidth direction="column" gap="m">
+                    {dialogs.map((dialog) => (
+                        <DialogsCard
+                            key={dialog.id}
+                            selected={activeDialog === dialog.id}
+                            onSelect={onSelect}
+                            {...dialog}
+                        />
+                    ))}
+                </Stack>
+            </Scroller>
+            <Profile />
+        </Stack>
+    );
 };
