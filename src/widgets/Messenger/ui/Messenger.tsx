@@ -10,7 +10,7 @@ import {
     messengerSelectors,
 } from 'entities/messenger';
 import { SendMessage } from 'features/messenger/send-message';
-import { Card, IconButton, Scroller, Stack } from 'shared/ui';
+import { Card, IconButton, Stack } from 'shared/ui';
 
 import styles from './Messenger.module.css';
 
@@ -28,6 +28,11 @@ export const Messenger: FC<MessengerProps> = ({
     activeDialog,
 }) => {
     const dialog = useDialog();
+
+    const handleClose = () => {
+        dialogReset();
+        onClose();
+    };
 
     useEffect(() => {
         if (activeDialog) {
@@ -54,13 +59,17 @@ export const Messenger: FC<MessengerProps> = ({
             direction="column"
             gap="xl"
         >
-            <IconButton className={styles.close} icon={<CrossIcon />} onClick={onClose} />
-            <Scroller fullWidth className={styles.messages}>
+            <IconButton
+                className={styles.close}
+                icon={<CrossIcon />}
+                onClick={handleClose}
+            />
+            <div className={styles.messages}>
                 <Stack fullWidth direction="column" gap="m">
-                    {dialog?.dialogs_messages.map((item) => {
+                    {dialog?.dialogs_messages.map((item, index) => {
                         return (
                             <Card
-                                key={Date.now()}
+                                key={index}
                                 className={cn({
                                     [styles.message]: true,
                                     [styles.client]: item.role === 'client',
@@ -72,7 +81,7 @@ export const Messenger: FC<MessengerProps> = ({
                         );
                     })}
                 </Stack>
-            </Scroller>
+            </div>
 
             <SendMessage
                 className={styles.control}

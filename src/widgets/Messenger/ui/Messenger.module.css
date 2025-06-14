@@ -6,6 +6,8 @@
     position: relative;
 }
 .messages {
+    width: 100%;
+    overflow: auto;
     flex-grow: 1;
 }
 

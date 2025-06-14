@@ -10,7 +10,7 @@ import {
 } from 'entities/dialogs';
 import { Profile } from 'entities/user';
 import { DialogsFilter } from 'features/dialogs';
-import { Scroller, Stack, useSnackbar } from 'shared/ui';
+import { Stack, useSnackbar } from 'shared/ui';
 
 import styles from './Dialogs.module.css';
 
@@ -45,7 +45,7 @@ export const Dialogs: FC<DialogsProps> = ({
             gap="l"
         >
             <DialogsFilter />
-            <Scroller className={styles.list}>
+            <div className={styles.list}>
                 <Stack fullWidth direction="column" gap="m">
                     {dialogs.map((dialog) => (
                         <DialogsCard
@@ -56,7 +56,7 @@ export const Dialogs: FC<DialogsProps> = ({
                         />
                     ))}
                 </Stack>
-            </Scroller>
+            </div>
             <Profile />
         </Stack>
     );

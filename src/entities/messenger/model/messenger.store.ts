@@ -11,7 +11,7 @@ export const dialogGot = createEvent<string>();
 export const dialogPooled = createEvent();
 export const dialogReset = createEvent();
 
-export const dialogPolling = polling(dialogPooled, 3000, {
+export const dialogPolling = polling(dialogPooled, 1000, {
     leading: true,
     trailing: true,
 });
@@ -59,7 +59,11 @@ sample({
     target: dialogPolling.stopped,
 });
 
-$dialog.on(getDialogByIdFx.doneData, (_, data) => data).reset(dialogReset);
+$dialog
+    .on(getDialogByIdFx.doneData, (_, data) => {
+        return data;
+    })
+    .reset(dialogReset);
 
 export const messengerSelectors = {
     useDialog: () => useUnit($dialog),
