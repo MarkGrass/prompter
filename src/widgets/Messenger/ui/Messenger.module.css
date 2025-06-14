@@ -16,4 +16,5 @@
 .operator {
     margin-right: 0;
     margin-left: auto;
+    background-color: var(--color-background-primary);
 }

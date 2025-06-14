@@ -4,6 +4,7 @@ import { Grid, GridItem } from 'shared/ui';
 import { Dialogs } from 'widgets/Dialogs';
 import { Messenger } from 'widgets/Messenger';
 import { Prompter } from 'widgets/Prompter';
+import { Uploader } from 'widgets/Uploader';
 
 const DialogsPage = () => {
     const [activeDialog, setActiveDialog] = useState<string | null>(null);
@@ -14,7 +15,7 @@ const DialogsPage = () => {
                 <Dialogs activeDialog={activeDialog} onSelect={setActiveDialog} />
             </GridItem>
             <GridItem col={6}>
-                <Messenger activeDialog={activeDialog} />
+                {activeDialog ? <Messenger activeDialog={activeDialog} /> : <Uploader />}
             </GridItem>
             <GridItem col={3}>
                 <Prompter />
