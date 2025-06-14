@@ -1,0 +1,7 @@
+.prompter {
+    padding: var(--space-m) var(--space-xl);
+}
+
+.copy {
+    width: 100%;
+}

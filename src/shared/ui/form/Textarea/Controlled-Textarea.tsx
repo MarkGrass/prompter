@@ -6,9 +6,18 @@ import { BaseTextarea } from './Textarea';
 
 export type TextareaProps = BaseTextareaProps & {
     name: string;
+    value?: string;
 };
 
-export const Textarea: FC<TextareaProps> = ({ name, size, rows, hint, ...props }) => {
+export const Textarea: FC<TextareaProps> = ({
+    className = '',
+    value = '',
+    name,
+    size,
+    rows,
+    hint,
+    ...props
+}) => {
     const { control } = useFormContext();
 
     return (
@@ -21,6 +30,8 @@ export const Textarea: FC<TextareaProps> = ({ name, size, rows, hint, ...props }
 
                 return (
                     <BaseTextarea
+                        className={className}
+                        defaultValue={value}
                         error={hasError}
                         hint={hasError ? errorMessage : hint}
                         id={name}

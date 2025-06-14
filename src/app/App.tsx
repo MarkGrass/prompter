@@ -1,3 +1,5 @@
+// @ts-ignore
+import '@ozen-ui/fonts';
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';

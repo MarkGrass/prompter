@@ -8,6 +8,7 @@ import { Uploader } from 'widgets/Uploader';
 
 const DialogsPage = () => {
     const [activeDialog, setActiveDialog] = useState<string | null>(null);
+    const [prompterHint, setPrompterHint] = useState<string>('');
 
     return (
         <Grid fullHeight fullWidth gap="0">
@@ -15,10 +16,14 @@ const DialogsPage = () => {
                 <Dialogs activeDialog={activeDialog} onSelect={setActiveDialog} />
             </GridItem>
             <GridItem col={6}>
-                {activeDialog ? <Messenger activeDialog={activeDialog} /> : <Uploader />}
+                {activeDialog ? (
+                    <Messenger activeDialog={activeDialog} hint={prompterHint} />
+                ) : (
+                    <Uploader />
+                )}
             </GridItem>
             <GridItem col={3}>
-                <Prompter />
+                <Prompter onPushMessage={setPrompterHint} />
             </GridItem>
         </Grid>
     );

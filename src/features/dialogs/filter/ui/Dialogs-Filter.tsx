@@ -23,7 +23,7 @@ export const DialogsFilter: FC = () => {
         <FormProvider {...methods}>
             <Form<FiltersFields>
                 className={styles.form}
-                id="login-form"
+                id="filters-form"
                 onSubmit={onSubmit}
             >
                 <Stack fullHeight fullWidth align="center" gap="s" justify="center">

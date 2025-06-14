@@ -11,7 +11,7 @@ export const dialogGot = createEvent<string>();
 export const dialogPooled = createEvent();
 export const dialogReset = createEvent();
 
-export const dialogPolling = polling(dialogPooled, 1000, {
+export const dialogPolling = polling(dialogPooled, 3000, {
     leading: true,
     trailing: true,
 });
@@ -30,6 +30,8 @@ sample({
 
 sample({
     clock: $activeDialog,
+    filter: (id) => Boolean(id),
+    target: getDialogByIdFx,
 });
 
 split({
@@ -49,7 +51,12 @@ sample({
     source: $activeDialog,
     filter: (id) => Boolean(id),
     fn: (id) => id,
-    target: getDialogByIdFx,
+    target: [getDialogByIdFx],
+});
+
+sample({
+    clock: dialogReset,
+    target: dialogPolling.stopped,
 });
 
 $dialog.on(getDialogByIdFx.doneData, (_, data) => data).reset(dialogReset);
