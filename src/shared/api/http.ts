@@ -6,7 +6,7 @@ import { ROUTES } from 'shared/router';
 const AUTH_ERROR_CODES = new Set([401]);
 const logoutCallbacks: (() => void)[] = [];
 const client = axios.create({
-    baseURL: 'https://aihack.mrbelka12000.com/api',
+    baseURL: 'http://backend:8085/api',
     headers: {
         'Content-Type': 'application/json',
     },
