@@ -1,5 +1,6 @@
 import { type FC, useEffect } from 'react';
 
+import { CrossIcon } from '@ozen-ui/icons';
 import cn from 'clsx';
 
 import {
@@ -9,18 +10,23 @@ import {
     messengerSelectors,
 } from 'entities/messenger';
 import { SendMessage } from 'features/messenger/send-message';
-import { Card, Scroller, Stack } from 'shared/ui';
+import { Card, IconButton, Scroller, Stack } from 'shared/ui';
 
 import styles from './Messenger.module.css';
 
 type MessengerProps = {
     hint: string;
+    onClose: () => void;
     activeDialog: string | null;
 };
 
 const { useDialog } = messengerSelectors;
 
-export const Messenger: FC<MessengerProps> = ({ hint, activeDialog }) => {
+export const Messenger: FC<MessengerProps> = ({
+    hint,
+    onClose = () => null,
+    activeDialog,
+}) => {
     const dialog = useDialog();
 
     useEffect(() => {
@@ -48,6 +54,7 @@ export const Messenger: FC<MessengerProps> = ({ hint, activeDialog }) => {
             direction="column"
             gap="xl"
         >
+            <IconButton className={styles.close} icon={<CrossIcon />} onClick={onClose} />
             <Scroller fullWidth className={styles.messages}>
                 <Stack fullWidth direction="column" gap="m">
                     {dialog?.dialogs_messages.map((item) => {

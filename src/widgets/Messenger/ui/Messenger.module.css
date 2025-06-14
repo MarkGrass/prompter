@@ -3,6 +3,7 @@
     padding: var(--space-m) var(--space-xl);
     border: solid var(--color-border-secondary);
     border-width: 0 1px;
+    position: relative;
 }
 .messages {
     flex-grow: 1;
@@ -11,7 +12,12 @@
 .message {
     max-width: 70%;
 }
-
+.close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 100;
+}
 .control {
     margin-top: auto;
     margin-bottom: 0;
