@@ -19,7 +19,7 @@ const DialogsPage = () => {
                 {activeDialog ? (
                     <Messenger activeDialog={activeDialog} hint={prompterHint} />
                 ) : (
-                    <Uploader />
+                    <Uploader onCreate={setActiveDialog} />
                 )}
             </GridItem>
             <GridItem col={3}>

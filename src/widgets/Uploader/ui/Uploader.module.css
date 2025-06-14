@@ -1,0 +1,15 @@
+.form {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: var(--space-s);
+}
+.control {
+    width: 100%;
+}
+
+.action {
+    align-self: flex-end;
+}

@@ -23,7 +23,7 @@ export const DialogsCard: FC<DialogsCardProps> = ({
     className = '',
     dialogs_messages = [],
 }) => {
-    const lastMessage = dialogs_messages[dialogs_messages.length - 1];
+    const lastMessage = dialogs_messages[dialogs_messages.length - 1] || {};
     const handleClick = () => {
         onSelect(id);
     };
@@ -40,14 +40,18 @@ export const DialogsCard: FC<DialogsCardProps> = ({
             onClick={handleClick}
         >
             <Stack fullWidth align="center" gap="m">
-                <Avatar name={client_id.toString()} size="s" />
+                <Avatar name={(client_id || 'Unknown Client').toString()} size="s" />
                 <Stack fullWidth className={styles.info} direction="column">
-                    <Typography noWrap variant="text-m_1">
-                        {lastMessage.message}
-                    </Typography>
-                    <Typography color="secondary" variant="text-xs">
-                        {formatDate(created_at)}
-                    </Typography>
+                    {lastMessage.message && (
+                        <Typography noWrap variant="text-m_1">
+                            {lastMessage.message}
+                        </Typography>
+                    )}
+                    {created_at && (
+                        <Typography color="secondary" variant="text-xs">
+                            {formatDate(created_at)}
+                        </Typography>
+                    )}
                 </Stack>
             </Stack>
         </Card>
