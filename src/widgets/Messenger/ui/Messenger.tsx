@@ -4,7 +4,7 @@ import cn from 'clsx';
 
 import { dialogGot, messengerSelectors } from 'entities/messenger';
 import { Card, Scroller, Stack } from 'shared/ui';
-import { BaseTextarea } from 'shared/ui/form/Textarea/Textarea.tsx';
+import { BaseTextarea } from 'shared/ui/form/Textarea/Textarea';
 
 import styles from './Messenger.module.css';
 

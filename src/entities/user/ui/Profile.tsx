@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
-import { userSelectors } from 'entities/user';
 import { Avatar, Stack, Typography } from 'shared/ui';
+
+import { userSelectors } from '../model/user.store';
 
 import styles from './Profile.module.css';
 

@@ -184,6 +184,7 @@ export default [
     {
         files: ['**/*.d.ts', '**/index.{js,ts}', '**/*.config.{js,ts}', '**/pages/*.tsx'],
         rules: {
+            'import/no-named-as-default-member': 'off',
             'import/no-default-export': 'off',
             'import/no-internal-modules': 'off',
             'import/no-unresolved': 'off',

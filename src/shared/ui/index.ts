@@ -32,6 +32,5 @@ export * from './Tabs';
 export * from './Tag';
 export * from './Tooltip';
 export * from './Typography';
-export * from './Timer';
 export * from './TabsWithContent';
 export * from '@ozen-ui/icons';
