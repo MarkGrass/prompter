@@ -27,6 +27,9 @@ export const DialogsCard: FC<DialogsCardProps> = ({
     const handleClick = () => {
         onSelect(id);
     };
+    if (!lastMessage) {
+        return null;
+    }
 
     return (
         <Card
